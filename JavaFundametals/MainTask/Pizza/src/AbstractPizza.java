@@ -1,3 +1,5 @@
+import java.util.List;
+
 public abstract class AbstractPizza {
     // ingredients
     private String pizzaName;
@@ -8,8 +10,8 @@ public abstract class AbstractPizza {
     public abstract String getPizzaName();
     public abstract void setPizzaName(String pizzaName);
 
-    public abstract String[] getPizzaIngredients();
-    public abstract void setPizzaIngredients();
+    public abstract List<String> getPizzaIngredients();
+    public abstract void setPizzaIngredients(String ingredient);
 
     public abstract String getPizzaType();
     public abstract void setPizzaType();

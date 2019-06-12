@@ -2,26 +2,23 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Pizza extends AbstractPizza  {
+public class Pizza extends AbstractPizza {
 
 
-    Ingredients ingredients = new Ingredients();
+    private final Ingredients ingredients;
 
-
-
-
-    private double pizzaPrice;
     private String pizzaName;
-    private List<String> pizzaIngredients = new ArrayList<String>();
+    private List<String> pizzaIngredients;
     private String pizzaType;
     private int numberOfPizza;
 
 
-
-    Pizza(){
+    Pizza() {
         //Реализовать соответствующий конструктор, в котором ингредиенты ещё не обозначены.
-        pizzaIngredients = null;
+        pizzaIngredients= new ArrayList<String>();
+        ingredients = new Ingredients();
     }
+
     @Override
     public String getPizzaName() {
         return this.pizzaName;
@@ -29,18 +26,18 @@ public class Pizza extends AbstractPizza  {
 
     @Override
     public void setPizzaName(String pizzaName) {
-       this.pizzaName = pizzaName;
+        this.pizzaName = pizzaName;
     }
 
 
     @Override
-    public String[] getPizzaIngredients() {
-        return new String[0];
+    public List<String> getPizzaIngredients() {
+        return pizzaIngredients;
     }
 
     @Override
-    public void setPizzaIngredients() {
-
+    public void setPizzaIngredients(String ingredient) {
+        pizzaIngredients.add(ingredient);
     }
 
     @Override
@@ -63,59 +60,8 @@ public class Pizza extends AbstractPizza  {
     public void setNumberOfPizza() {
 
     }
-
-//        Tomato Paste     1€
-//        Cheese           1€
-//        Salami           1,5€
-//        Bacon            1,2€
-//        Garlic           0,3€
-//        Corn             0,7€
-//        Pepperoni        0,6€
-//        Olives           0,5€
+}
 
 
-//    public double takeIngredient(Ingredients i) {
-//        switch (i.  ){
-//
-//            case TOMATOPASTE:
-//                    Ingredient inf = new Ingredient(Ingredient.valueOf("TOMATOPASTE").toString());
-//
-//                System.out.println(s);
-//                pizzaIngredients.add(s);
-//                pizzaPrice += 1;
-//                break;
 
-//            case CHEESE:
-//                pizzaPrice += 1;
-//                break;
-//
-//            case SALAMI:
-//                pizzaPrice += 1.5;
-//                break;
-//
-//            case BACON:
-//                pizzaPrice += 1.2;
-//                break;
-//
-//            case GARLIC:
-//                pizzaPrice += 0.3;
-//                break;
-//
-//            case CORN:
-//                pizzaPrice += 0.7;
-//                break;
-//
-//            case PEPPERONI:
-//                pizzaPrice += 0.6;
-//                break;
-//
-//            case OLIVES:
-//                pizzaPrice += 0.5;
-//                break;
 
-        }
-//        System.out.println(pizzaIngredients);
-//        return pizzaPrice;
-//    }
-//
-//}

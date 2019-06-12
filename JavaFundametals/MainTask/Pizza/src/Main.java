@@ -1,10 +1,12 @@
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.LinkedHashMap;
 
 public class Main {
 
     public static void main(String[] args) {
-       // Order order1 = new Order();
+       Order order1 = new Order();
 
        // Order order2 = new Order();
 
@@ -14,11 +16,9 @@ public class Main {
 //        System.out.println(order2.client.getClientName());
 //        System.out.println(order2.pizza.getPizzaName());
 
-        HashMap<String, String> newMap = new HashMap<String, String>();
-        newMap.put("my_code", "shhh_secret");
-        String value = newMap.get("my_code");
 
 
+//
 
     }
 }
