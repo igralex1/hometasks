@@ -10,7 +10,7 @@ public class Pizza extends AbstractPizza {
     private String pizzaName;
     private List<String> pizzaIngredients;
     private String pizzaType;
-    private int numberOfPizza;
+    private int numberOfPizza = 0;
 
 
     Pizza() {
@@ -53,12 +53,12 @@ public class Pizza extends AbstractPizza {
     //Клиенты могут также дать название своей пицце и заказать их в количестве до 10 штук.
     @Override
     public int getNumberOfPizza() {
-        return 0;
+        return this.numberOfPizza;
     }
 
     @Override
     public void setNumberOfPizza() {
-
+        this.numberOfPizza++;
     }
 }
 

@@ -1,3 +1,5 @@
+import org.omg.CORBA.INTERNAL;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -6,22 +8,26 @@ import java.util.LinkedHashMap;
 public class Main {
 
     public static void main(String[] args) {
-       Order order1 = new Order();
-
-       // Order order2 = new Order();
-
-//        System.out.println(order1.client.getClientName());
-//        System.out.println(order1.pizza.getPizzaName());
-//
-//        System.out.println(order2.client.getClientName());
-//        System.out.println(order2.pizza.getPizzaName());
+       //Order order1 = new Order();
 
 
-
-//
 
     }
 }
+
+
+
+//
+//        LinkedHashMap <String, Integer> myList = new LinkedHashMap<String,Integer>();
+//
+//
+//        myList.put("first", 1);
+//        myList.put("second", 2);
+//        myList.put("third", 3);
+//
+//        myList.remove("second");
+//        System.out.println(myList.get("second"));
+//        System.out.println(myList.keySet().toArray()[1].toString());
 
 //
 // Каждая заказанная пицца имеет автоматически присвоенный,
@@ -39,3 +45,5 @@ public class Main {
 //        Olives           0,5€
 //
 // Основа пиццы стоит 1 €, для Calzone - надбавка 0,5 €.
+
+

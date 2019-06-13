@@ -1,9 +1,3 @@
-import com.sun.org.apache.xpath.internal.SourceTree;
-
-import java.io.PrintStream;
-import java.lang.reflect.Array;
-import java.text.DecimalFormat;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -14,13 +8,17 @@ public class Order {
     private static int orderNumber;
     Client client = new Client();
     private final Pizza pizza = new Pizza();
-    private float pizzaPrice;
+    private float pizzaPrice = 1;
 
     Order() {
-        // Unique
-        //orderNumber++;
-        //pizzaNameInOrder();
-        chooseIngredient();
+
+
+        while ( pizza.getNumberOfPizza() < 11 ){
+            System.out.println(pizza.getNumberOfPizza());
+            pizza.setNumberOfPizza();
+        }
+        // Выбор из нескольких ингредиентов
+        //chooseIngredient();
     }
 
     // Format Order : 0000X
@@ -51,15 +49,15 @@ public class Order {
             Ingredients ingredients = new Ingredients();
 //        System.out.println();
         Scanner in = new Scanner(System.in);
-        System.out.println("Choose pizza component:\n " +
-                "0. Tomato Paste     1€  \n " +
-                "1. Cheese           1€  \n " +
+        System.out.println("Choose pizza component:\n" +
+                "0. Tomato Paste     1€  \n" +
+                "1. Cheese           1€  \n" +
                 "2. Salami           1,5€\n" +
-                "3. Bacon            1,2€\n " +
+                "3. Bacon            1,2€\n" +
                 "4. Garlic           0,3€\n" +
-                "5. Corn             0,7€\n " +
-                "6. Pepperoni        0,6€\n " +
-                "7. Olives           0,5€\n " +
+                "5. Corn             0,7€\n" +
+                "6. Pepperoni        0,6€\n" +
+                "7. Olives           0,5€\n" +
                 "default (Press any number). Add your ingredients +0.5€\n...");
 
         int choose = in.nextInt();
@@ -67,77 +65,60 @@ public class Order {
             case 0:
                 // Add in pizza ingredient
                 pizza.setPizzaIngredients(ingredients.getIngredientKey(0).toString());
-                System.out.println(pizza.getPizzaIngredients());
                 // Add price for ingredient
                 pizzaPrice += ingredients.getIngredientValue("Tomato Paste");
-                System.out.println(pizzaPrice);
                 break;
             case 1:
                 // Add in pizza ingredient
                 pizza.setPizzaIngredients(ingredients.getIngredientKey(1).toString());
-                System.out.println(pizza.getPizzaIngredients());
                 // Add price for ingredient
                 pizzaPrice += ingredients.getIngredientValue("Cheese");
-                System.out.println(pizzaPrice);
                 break;
             case 2:
                 // Add in pizza ingredient
                 pizza.setPizzaIngredients(ingredients.getIngredientKey(2).toString());
-                System.out.println(pizza.getPizzaIngredients());
                 // Add price for ingredient
                 pizzaPrice += ingredients.getIngredientValue("Salami");
-                System.out.println(pizzaPrice);
                 break;
             case 3:
                 // Add in pizza ingredient
                 pizza.setPizzaIngredients(ingredients.getIngredientKey(3).toString());
-                System.out.println(pizza.getPizzaIngredients());
                 // Add price for ingredient
                 pizzaPrice += ingredients.getIngredientValue("Bacon");
-                System.out.println(pizzaPrice);
                 break;
             case 4:
                 // Add in pizza ingredient
                 pizza.setPizzaIngredients(ingredients.getIngredientKey(4).toString());
-                System.out.println(pizza.getPizzaIngredients());
                 // Add price for ingredient
                 pizzaPrice += ingredients.getIngredientValue("Garlic");
-                System.out.println(pizzaPrice);
                 break;
             case 5:
                 // Add in pizza ingredient
                 pizza.setPizzaIngredients(ingredients.getIngredientKey(5).toString());
-                System.out.println(pizza.getPizzaIngredients());
                 // Add price for ingredient
                 pizzaPrice += ingredients.getIngredientValue("Corn");
-                System.out.println(pizzaPrice);
                 break;
             case 6:
                 // Add in pizza ingredient
                 pizza.setPizzaIngredients(ingredients.getIngredientKey(6).toString());
-                System.out.println(pizza.getPizzaIngredients());
                 // Add price for ingredient
                 pizzaPrice += ingredients.getIngredientValue("Pepperoni");
-                System.out.println(pizzaPrice);
                 break;
             case 7:
                 // Add in pizza ingredient
                 pizza.setPizzaIngredients(ingredients.getIngredientKey(7).toString());
-                System.out.println(pizza.getPizzaIngredients());
                 // Add price for ingredient
                 pizzaPrice += ingredients.getIngredientValue("Olives");
-                System.out.println(pizzaPrice);
                 break;
 
             default:
-                System.out.println("add pizza");
-                //add new user ingredient method Scanner in system
+                System.out.println("add new user ingredient method Scanner in system\n" +
+                        "Our companu work with this function");
+
 
         }
-
-
+        System.out.println(pizza.getPizzaIngredients());
+        System.out.println(pizzaPrice);
     }
-
-
 
 }
