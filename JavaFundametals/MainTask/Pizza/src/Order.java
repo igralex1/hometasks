@@ -6,21 +6,23 @@ import java.util.Scanner;
 public class Order {
 
     private static int orderNumber;
-    Client client = new Client();
+    Client client;
     private final Pizza pizza = new Pizza();
     private float pizzaPrice = 1;
 
+
     Order() {
+        this.client = new Client();
 
-
-        while ( pizza.getNumberOfPizza() < 11 ){
-            System.out.println(pizza.getNumberOfPizza());
-            pizza.setNumberOfPizza();
-        }
-        // Выбор из нескольких ингредиентов
-        //chooseIngredient();
     }
 
+    public int getNumberOfPizza(){
+        return pizza.getNumberOfPizza();
+    }
+
+    public void setNumberOfPizza() {
+        pizza.setNumberOfPizza();
+    }
     // Format Order : 0000X
     public static String getOrderNumber() {
         String orderNumberString = String.format(" %05d%n", orderNumber );
@@ -29,7 +31,7 @@ public class Order {
 
     // Condition to select pizza's name
     public void pizzaNameInOrder(){
-        System.out.println("Please name your pizza: ");
+        System.out.println("Дайте название вашей пиццы: ");
         Scanner scannerPizzaName = new Scanner(System.in);
         String pizzaNameInOrder = scannerPizzaName.next();
 //    Проверить, что название пиццы содержит не менее 4 и не более 20 латинских символов.
@@ -47,9 +49,8 @@ public class Order {
     // Choose ingredients from pizza.ingredients(HashMap)
     public void chooseIngredient() {
             Ingredients ingredients = new Ingredients();
-//        System.out.println();
-        Scanner in = new Scanner(System.in);
-        System.out.println("Choose pizza component:\n" +
+            Scanner in = new Scanner(System.in);
+            System.out.println("Выберите ингредиент в пиццу:\n" +
                 "0. Tomato Paste     1€  \n" +
                 "1. Cheese           1€  \n" +
                 "2. Salami           1,5€\n" +
@@ -117,8 +118,15 @@ public class Order {
 
 
         }
-        System.out.println(pizza.getPizzaIngredients());
-        System.out.println(pizzaPrice);
+        //System.out.println(pizza.getPizzaIngredients());
+        //System.out.println(pizzaPrice);
     }
+//  [Заказ : Клиент : Название : Количество]
+    public void choosedIngredient() {
 
+        System.out.println("[ Заказ : " + getOrderNumber()  +
+                            " Клиент : " + client.getClientName() +
+                            " Название : " + pizza.getPizzaName()  +
+                            " Количество : " + pizza.getNumberOfPizza() + "]");
+    }
 }

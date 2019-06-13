@@ -5,7 +5,7 @@ public class Client {
 
     Client(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter your name");
+        System.out.println("Введите свое имя : ");
         setClientName(sc.next());
     }
 

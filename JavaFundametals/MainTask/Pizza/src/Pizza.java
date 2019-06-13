@@ -6,7 +6,6 @@ public class Pizza extends AbstractPizza {
 
 
     private final Ingredients ingredients;
-
     private String pizzaName;
     private List<String> pizzaIngredients;
     private String pizzaType;
